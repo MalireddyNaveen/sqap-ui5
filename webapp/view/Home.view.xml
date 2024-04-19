@@ -1,0 +1,66 @@
+<mvc:View
+    controllerName="com.app.ui5demo.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+	
+>
+    <!-- <f:SimpleForm
+        id="SimpleFormChange354"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="Address"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        singleContainerFullSize="false"
+    >
+        <Label text="FirstName"></Label>
+		<Input  value="{Employedetails>/employee/name}"></Input>
+		<Label text="Age"></Label>
+		<Input value="{Employedetails>/employee/age}"></Input>
+            
+    </f:SimpleForm> -->
+	<Table items="{/employee/}" alternateRowColors="true" growing="true" growingThreshold="5" growingScrollToLoad="true">
+        <columns>
+            <Column >
+                <header>
+                    <Title text="Employee Name"></Title>
+                </header>
+            </Column>
+            <Column >
+                <header>
+                    <Title text="Employee DOB"></Title>
+                </header>
+            </Column>
+            <Column >
+                <header>
+                    <Title text="Employee Email"></Title>
+                </header>
+            </Column>
+            <Column >
+                <header>
+                    <Title text="Employee Gender"></Title>
+                </header>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem >
+                <Text text="{fName} {lName}"></Text>
+                <Text text="{DOB}"></Text>
+                <Text text="{email}"></Text>
+                <Text text="{gender}"></Text>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>
